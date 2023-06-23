@@ -3,10 +3,13 @@ package com.juliano.task.form;
 import com.juliano.task.enumeration.TaskStatus;
 import com.juliano.task.model.Task;
 import com.juliano.task.repository.TaskRepository;
+import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 public class UpdateStatusTaskForm {
 
-	//TODO Validar informações nulas, vazias.
+	@NotNull
+	@Length(min = 0)
 	private String status;
 
 	public String getStatus() {

@@ -2,12 +2,16 @@ package com.juliano.task.form;
 
 import com.juliano.task.model.Task;
 import com.juliano.task.repository.TaskRepository;
+import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 public class UpdateTaskForm {
-	//TODO Validar informações nulas, vazias e tamanho maximo de 60.
+	@NotNull
+	@Length(min = 0, max = 60)
 	private String title;
 
-	//TODO Validar informações nulas, vazias e tamanho maximo de 300.
+	@NotNull
+	@Length(min = 0, max = 300)
 	private String description;
 
 	public String getTitle() {
